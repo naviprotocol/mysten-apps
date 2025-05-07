@@ -3,7 +3,7 @@
 import { useSignTransactionBlock, useSuiClient } from '@mysten/dapp-kit';
 import { SuiTransactionBlockResponse } from '@mysten/sui.js/client';
 import { TransactionBlock } from '@mysten/sui.js/transactions';
-import { isValidSuiAddress, toB64 } from '@mysten/sui.js/utils';
+import { isValidSuiAddress, toHEX } from '@mysten/sui.js/utils';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 
@@ -31,7 +31,7 @@ export function useTransactionExecution() {
 
 			txb.setSender(multisigAddress);
 
-			const txData = toB64(
+			const txData = toHEX(
 				await txb.build({
 					client,
 				}),
