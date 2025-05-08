@@ -7,7 +7,7 @@ import { AvailableTabs } from './helpers/utils';
 import { NewQuorumUpgrade } from './sections/NewQuorumUpgrade';
 import { ProposeUpgrade } from './sections/ProposeUpgrade';
 import { UpgradeProposalManager } from './sections/UpgradeProposalManager';
-
+import { CommitUpgrade } from './sections/CommitUpgeade';
 export function QuorumDashboard() {
 	const [activeTab, setActiveTab] = useState<AvailableTabs>('upgrade-policy');
 
@@ -16,6 +16,11 @@ export function QuorumDashboard() {
 			label: 'Vote for Proposed Upgrade',
 			value: 'upgrade-policy',
 			content: <UpgradeProposalManager />,
+		},
+		{
+			label: 'Commit Upgrade',
+			value: 'commit-upgrade',
+			content: <CommitUpgrade />,
 		},
 		{
 			label: 'Propose Upgrade',
